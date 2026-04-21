@@ -1,19 +1,19 @@
 :root {
-  --bg: #f4f1ea;
-  --card: #fffdf8;
-  --text: #1f1d1a;
-  --muted: #746d63;
-  --line: rgba(31, 29, 26, 0.08);
-  --accent: #2f5d50;
-  --accent-2: #eae2d4;
-  --shadow: 0 18px 60px rgba(20, 18, 14, 0.12);
+  --bg: #F5F0E8;
+  --card: #F5F0E8;
+  --text: #24211E;
+  --muted: #6F655D;
+  --line: #BBA999;
+  --accent: #8E7A6A;
+  --accent-2: #E7DED2;
+  --shadow: 0 18px 60px rgba(36, 33, 30, 0.12);
 }
 
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body {
   font-family: 'Inter', system-ui, sans-serif;
-  background: radial-gradient(circle at top, #fbf8f3 0%, var(--bg) 55%, #ebe6dc 100%);
+  background: var(--bg);
   color: var(--text);
   min-height: 100vh;
 }
@@ -28,38 +28,41 @@ body {
 .card {
   width: min(100%, 460px);
   background: var(--card);
-  border: 1px solid var(--line);
+  border: 1px solid rgba(187, 169, 153, 0.35);
   border-radius: 28px;
   box-shadow: var(--shadow);
   padding: 28px;
 }
 
-.avatar {
-  width: 96px;
-  height: 96px;
-  border-radius: 24px;
-  object-fit: cover;
+.wordmark {
   display: block;
-  margin-bottom: 18px;
+  width: clamp(180px, 55%, 240px);
+  height: auto;
+  margin: 6px auto 28px;
 }
 
 .eyebrow {
-  margin: 0 0 8px;
+  margin: 0 0 10px;
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 400;
 }
 
 h1 {
   margin: 0;
-  font-size: clamp(2rem, 5vw, 2.6rem);
+  font-size: clamp(2.4rem, 7vw, 3.2rem);
+  font-weight: 300;
   line-height: 1.05;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
 }
 
 .bio {
-  margin: 14px 0 24px;
-  color: var(--muted);
-  line-height: 1.55;
+  margin: 18px 0 28px;
+  color: var(--text);
+  font-size: clamp(1.25rem, 3.5vw, 1.6rem);
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
 }
 
 .actions {
@@ -79,7 +82,7 @@ h1 {
   border-radius: 14px;
   padding: 14px 18px;
   font: inherit;
-  font-weight: 600;
+  font-weight: 500;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -88,8 +91,8 @@ h1 {
 }
 
 .btn-primary {
-  background: var(--accent);
-  color: white;
+  background: var(--text);
+  color: var(--bg);
 }
 
 .btn-secondary {
@@ -107,11 +110,11 @@ h1 {
   flex-direction: column;
   gap: 4px;
   padding: 15px 16px;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(187, 169, 153, 0.4);
   border-radius: 16px;
   text-decoration: none;
   color: inherit;
-  background: rgba(255,255,255,0.7);
+  background: transparent;
 }
 
 .link-row span { font-weight: 600; }
@@ -122,12 +125,13 @@ h1 {
   border-radius: 24px;
   padding: 0;
   width: min(92vw, 360px);
-  background: white;
+  background: var(--card);
+  color: var(--text);
   box-shadow: var(--shadow);
 }
 
 .qr-dialog::backdrop {
-  background: rgba(0,0,0,0.4);
+  background: rgba(36, 33, 30, 0.45);
 }
 
 .qr-header {
@@ -139,12 +143,14 @@ h1 {
 
 .qr-header h2 {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
+  font-weight: 500;
 }
 
 .icon-btn {
   border: 0;
   background: transparent;
+  color: inherit;
   font-size: 2rem;
   line-height: 1;
   cursor: pointer;

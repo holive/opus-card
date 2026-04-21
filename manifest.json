@@ -6,13 +6,13 @@
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#f4f1ea",
-  "theme_color": "#2f5d50",
+  "background_color": "#F5F0E8",
+  "theme_color": "#24211E",
   "icons": [
     {
-      "src": "./avatar.jpg",
-      "sizes": "800x800",
-      "type": "image/jpeg",
+      "src": "./assets/opus-wordmark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
       "purpose": "any"
     },
     {
