@@ -131,24 +131,66 @@ h1 {
 }
 
 .links {
-  display: grid;
-  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 6px;
 }
 
 .link-row {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 15px 16px;
-  border: 1px solid rgba(187, 169, 153, 0.4);
-  border-radius: 16px;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 4px;
   text-decoration: none;
   color: inherit;
-  background: transparent;
+  border-bottom: 1px solid rgba(187, 169, 153, 0.55);
 }
 
-.link-row span { font-weight: 600; }
-.link-row small { color: var(--muted); }
+.link-row:last-child {
+  border-bottom: 0;
+}
+
+.link-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  color: var(--text);
+}
+
+.link-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.link-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-left: 20px;
+  border-left: 1px solid rgba(187, 169, 153, 0.55);
+  min-width: 0;
+  flex: 1;
+}
+
+.link-label {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.link-value {
+  color: var(--text);
+  font-weight: 400;
+  font-size: 1rem;
+  overflow-wrap: anywhere;
+}
+
+.link-sub {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
 
 .qr-dialog {
   border: none;
