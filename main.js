@@ -26,7 +26,7 @@ async function openShare() {
 function renderQr() {
   if (qrContainer.dataset.rendered === 'true') return;
 
-  if (typeof QRCode === 'undefined') {
+  if (typeof qrcode === 'undefined') {
     qrContainer.innerHTML =
       '<p>QR code indisponível. Copie o link: <br><code>' +
       window.location.href +
@@ -36,10 +36,10 @@ function renderQr() {
   }
 
   try {
-    QRCode.toCanvas(qrContainer, window.location.href, {
-      width: 220,
-      margin: 1,
-    });
+    const qr = qrcode(0, 'M');
+    qr.addData(window.location.href);
+    qr.make();
+    qrContainer.innerHTML = qr.createSvgTag({ cellSize: 6, margin: 4, scalable: true });
     qrContainer.dataset.rendered = 'true';
   } catch (error) {
     qrContainer.innerHTML =
