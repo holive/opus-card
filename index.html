@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opus Interiores</title>
+    <meta name="description" content="Cartão digital da Opus Interiores" />
+    <meta name="theme-color" content="#2f5d50" />
+
+    <link rel="canonical" href="https://holive.github.io/opus-card/" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./avatar.jpg" />
+    <link rel="manifest" href="./manifest.json" />
+
+    <meta property="og:title" content="Opus Interiores" />
+    <meta property="og:description" content="Móveis planejados e interiores" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://holive.github.io/opus-card/" />
+    <meta property="og:image" content="https://holive.github.io/opus-card/avatar.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Opus Interiores" />
+    <meta name="twitter:description" content="Móveis planejados e interiores" />
+    <meta name="twitter:image" content="https://holive.github.io/opus-card/avatar.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/qrcode@1.5.4/build/qrcode.min.js"></script>
+    <script defer src="./main.js"></script>
+  </head>
+  <body>
+    <main class="page">
+      <section class="card">
+        <img class="avatar" src="./avatar.jpg" alt="Opus Interiores" />
+        <p class="eyebrow">Móveis planejados • Interiores</p>
+        <h1>Opus Interiores</h1>
+        <p class="bio">
+          Projetos sob medida com foco em estética, funcionalidade e execução.
+        </p>
+
+        <div class="actions primary-actions">
+          <a class="btn btn-primary" href="./contact.vcf" download>
+            Salvar contato
+          </a>
+          <button class="btn btn-secondary" type="button" id="shareBtn">
+            Compartilhar
+          </button>
+        </div>
+
+        <div class="links">
+          <a class="link-row" href="https://wa.me/5521999999999?text=Ol%C3%A1%2C%20vim%20pelo%20cart%C3%A3o%20digital%20da%20Opus%20Interiores." target="_blank" rel="noreferrer">
+            <span>WhatsApp</span>
+            <small>+55 21 99999-9999</small>
+          </a>
+          <a class="link-row" href="mailto:contato@opusinteriores.com.br">
+            <span>E-mail</span>
+            <small>contato@opusinteriores.com.br</small>
+          </a>
+          <a class="link-row" href="https://www.instagram.com/opusinteriores" target="_blank" rel="noreferrer">
+            <span>Instagram</span>
+            <small>@opusinteriores</small>
+          </a>
+          <a class="link-row" href="https://opusinteriores.com.br" target="_blank" rel="noreferrer">
+            <span>Site</span>
+            <small>opusinteriores.com.br</small>
+          </a>
+          <a class="link-row" href="https://maps.google.com/?q=Niterói%2C%20RJ" target="_blank" rel="noreferrer">
+            <span>Localização</span>
+            <small>Niterói, RJ</small>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="qr-dialog" id="qrDialog">
+      <div class="qr-header">
+        <h2>Compartilhar perfil</h2>
+        <button class="icon-btn" type="button" id="closeQrBtn" aria-label="Fechar">×</button>
+      </div>
+      <div class="qr-content">
+        <div id="qrcode"></div>
+        <p>Escaneie para abrir esta página.</p>
+      </div>
+    </dialog>
+  </body>
+</html>

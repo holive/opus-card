@@ -1,0 +1,25 @@
+{
+  "name": "Opus Interiores",
+  "short_name": "Opus",
+  "description": "Cartão digital da Opus Interiores",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f4f1ea",
+  "theme_color": "#2f5d50",
+  "icons": [
+    {
+      "src": "./avatar.jpg",
+      "sizes": "800x800",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

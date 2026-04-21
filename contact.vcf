@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Opus Interiores;;;;
+FN:Opus Interiores
+ORG:Opus Interiores
+TITLE:Móveis planejados e interiores
+TEL;TYPE=CELL,VOICE:+55 21 99999-9999
+EMAIL;TYPE=INTERNET:contato@opusinteriores.com.br
+URL:https://opusinteriores.com.br
+ADR;TYPE=WORK:;;Niterói;RJ;;;Brasil
+NOTE:Projetos sob medida com foco em estética, funcionalidade e execução.
+END:VCARD
