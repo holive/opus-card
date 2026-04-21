@@ -26,7 +26,10 @@ async function openShare() {
 function renderQr() {
   if (qrContainer.dataset.rendered === 'true') return;
 
-  if (typeof qrcode === 'undefined') {
+  const qrFn = window.qrcode;
+  console.log('[renderQr] typeof qrcode =', typeof qrcode, 'typeof window.qrcode =', typeof qrFn);
+
+  if (typeof qrFn !== 'function') {
     qrContainer.innerHTML =
       '<p>QR code indisponível. Copie o link: <br><code>' +
       window.location.href +
@@ -36,12 +39,13 @@ function renderQr() {
   }
 
   try {
-    const qr = qrcode(0, 'M');
+    const qr = qrFn(0, 'M');
     qr.addData(window.location.href);
     qr.make();
     qrContainer.innerHTML = qr.createSvgTag({ cellSize: 6, margin: 4, scalable: true });
     qrContainer.dataset.rendered = 'true';
   } catch (error) {
+    console.error('[renderQr] failed:', error);
     qrContainer.innerHTML =
       '<p>Falha ao gerar QR. Link: <br><code>' +
       window.location.href +
