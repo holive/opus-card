@@ -52,7 +52,8 @@ body {
 
 .wordmark {
   display: block;
-  width: clamp(180px, 55%, 240px);
+  width: 100%;
+  max-width: 180px;
   height: auto;
   margin: 6px auto 28px;
 }
