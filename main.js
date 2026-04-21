@@ -2,23 +2,9 @@ const shareBtn = document.getElementById('shareBtn');
 const qrDialog = document.getElementById('qrDialog');
 const closeQrBtn = document.getElementById('closeQrBtn');
 const qrContainer = document.getElementById('qrcode');
+const sendLinkBtn = document.getElementById('sendLinkBtn');
 
-async function openShare() {
-  const shareData = {
-    title: document.title,
-    text: 'Cartão digital da Opus Interiores',
-    url: window.location.href,
-  };
-
-  if (navigator.share) {
-    try {
-      await navigator.share(shareData);
-      return;
-    } catch (error) {
-      if (error?.name === 'AbortError') return;
-    }
-  }
-
+function openShare() {
   qrDialog.showModal();
   renderQr();
 }
@@ -52,7 +38,42 @@ function renderQr() {
   }
 }
 
+async function sendLink() {
+  const url = window.location.href;
+  const shareData = {
+    title: document.title,
+    text: 'Cartão digital da Opus Interiores',
+    url,
+  };
+
+  if (navigator.share) {
+    try {
+      await navigator.share(shareData);
+      return;
+    } catch (error) {
+      if (error?.name === 'AbortError') return;
+      // fall through to clipboard
+    }
+  }
+
+  await copyToClipboard(url);
+}
+
+async function copyToClipboard(url) {
+  const originalLabel = sendLinkBtn.textContent.trim();
+  try {
+    await navigator.clipboard.writeText(url);
+    sendLinkBtn.textContent = 'Link copiado';
+  } catch {
+    sendLinkBtn.textContent = 'Falha ao copiar';
+  }
+  setTimeout(() => {
+    sendLinkBtn.textContent = originalLabel;
+  }, 2000);
+}
+
 shareBtn.addEventListener('click', openShare);
+sendLinkBtn.addEventListener('click', sendLink);
 closeQrBtn.addEventListener('click', () => qrDialog.close());
 qrDialog.addEventListener('click', (event) => {
   if (event.target === qrDialog) qrDialog.close();
