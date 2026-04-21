@@ -86,18 +86,48 @@ h1 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
+  gap: 10px;
+  min-height: 50px;
   flex: 1;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.btn-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
 
 .btn-primary {
   background: var(--text);
   color: var(--bg);
+  box-shadow:
+    0 10px 24px rgba(36, 33, 30, 0.22),
+    0 2px 4px rgba(36, 33, 30, 0.12);
 }
 
 .btn-secondary {
   background: var(--accent-2);
   color: var(--text);
+  box-shadow: 0 4px 14px rgba(36, 33, 30, 0.08);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary:hover {
+  box-shadow:
+    0 14px 28px rgba(36, 33, 30, 0.28),
+    0 3px 6px rgba(36, 33, 30, 0.14);
+}
+
+.btn-secondary:hover {
+  box-shadow: 0 6px 18px rgba(36, 33, 30, 0.12);
+}
+
+.btn:active {
+  transform: translateY(0);
 }
 
 .links {
