@@ -27,7 +27,6 @@ function renderQr() {
   if (qrContainer.dataset.rendered === 'true') return;
 
   const qrFn = window.qrcode;
-  console.log('[renderQr] typeof qrcode =', typeof qrcode, 'typeof window.qrcode =', typeof qrFn);
 
   if (typeof qrFn !== 'function') {
     qrContainer.innerHTML =
@@ -45,7 +44,6 @@ function renderQr() {
     qrContainer.innerHTML = qr.createSvgTag({ cellSize: 6, margin: 4, scalable: true });
     qrContainer.dataset.rendered = 'true';
   } catch (error) {
-    console.error('[renderQr] failed:', error);
     qrContainer.innerHTML =
       '<p>Falha ao gerar QR. Link: <br><code>' +
       window.location.href +
